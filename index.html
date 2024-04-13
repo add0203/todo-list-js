@@ -1,0 +1,299 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600&family=Jersey+10+Charted&family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      button {
+        padding: 10px 20px; /* Adjust padding as needed */
+        border: none; /* Remove border */
+        border-radius: 4px; /* Rounded corners */
+        background-color: #ffffff; /* Button background color */
+        color: black; /* Text color */
+        font-size: 16px; /* Font size */
+        cursor: pointer; /* Cursor style */
+      }
+
+      /* Hover effect for button */
+      button:hover {
+        background-color: #0056b3; /* Button background color on hover */
+      }
+      .container {
+        width: 100%;
+        background-color: beige;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .todo-app {
+        height: 50%;
+        width: 50%;
+        background-color: greenyellow;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+
+        h2 {
+          font-size: x-large;
+        }
+        img {
+          width: 25px;
+        }
+      }
+      .row {
+        /* Input field */
+        input[type="text"] {
+          padding: 8px 12px; /* Adjust padding as needed */
+          border: 1px solid white;
+          /* Border color */
+          border-radius: 4px; /* Rounded corners */
+          font-size: 16px; /* Font size */
+        }
+
+        /* Button */
+      }
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      ul li {
+        list-style: none;
+        font-size: 17px;
+        user-select: none;
+        cursor: pointer;
+        position: relative;
+        padding: 12px 8px 12px 50px;
+      }
+      ul li::before {
+        content: " ";
+        position: absolute;
+        height: 28px;
+        width: 28px;
+        border-radius: 50%;
+        background-image: url(unchecked.png);
+        background-size: cover;
+        background-position: center;
+        top: 15px;
+        left: 13px;
+      }
+      ul li.checked {
+        text-decoration: line-through;
+      }
+      ul li.checked::before {
+        background-image: url(checked.png);
+        background-size: cover;
+        background-position: center;
+        top: 12px;
+        left: 8px;
+      }
+      ul li span {
+        position: absolute;
+        right: -46px;
+        top: 10px;
+        width: 40px;
+        height: 30px;
+        font-size: 8px;
+        color: black;
+        text-align: center;
+      }
+      ul li span:hover {
+        background-color: rgba(0, 0, 255, 0.5);
+      }
+      .myButtonClass {
+        margin-left: 20px;
+        padding: 8px 15px;
+      }
+    </style> -->
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto", sans-serif;
+        /* color: white; */
+      }
+      h2 {
+        font-family: "Jersey 10 Charted", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 35px;
+      }
+
+      button {
+        padding: 10px 20px; /* Adjust padding as needed */
+        border: none; /* Remove border */
+        border-radius: 4px; /* Rounded corners */
+        background-color: #ffffff; /* Button background color */
+        color: black; /* Text color */
+        font-size: 16px; /* Font size */
+        cursor: pointer; /* Cursor style */
+        font-weight: bold;
+      }
+
+      /* Hover effect for button */
+      button:hover {
+        background-color: #0056b3; /* Change background color on hover */
+        color: white; /* Change text color on hover */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      }
+
+      .container {
+        width: 100%;
+        /* background-color: yellowgreen;  */
+        background-image: url("./img/mount.jpg");
+
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        /* background-size: auto; */
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px; /* Added padding */
+      }
+
+      .todo-app {
+        border-radius: 10px;
+        padding: 20px;
+        height: 50%;
+        width: auto;
+        min-width: 50%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        background: linear-gradient(
+          147deg,
+          rgba(255, 255, 255, 0.3) 0%,
+          rgba(255, 255, 255, 0) 100%,
+          rgba(217, 217, 217, 0) 100%
+        );
+        backdrop-filter: blur(20px);
+        border: thin solid white;
+      }
+
+      .todo-app img {
+        width: 25px;
+      }
+
+      .row input[type="text"] {
+        width: auto;
+        min-width: 300px;
+        padding: 8px 12px; /* Adjust padding as needed */
+        border: 1px solid white; /* Border color */
+        border-radius: 4px; /* Rounded corners */
+        font-size: 16px; /* Font size */
+      }
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: auto;
+      }
+
+      ul li {
+        list-style: none;
+        font-size: 17px;
+        user-select: none;
+        cursor: pointer;
+        position: relative;
+        padding: 12px 8px 12px 50px;
+      }
+
+      ul li::before {
+        content: " ";
+        position: absolute;
+        height: 28px;
+        width: 28px;
+        /* border-radius: 50%; */
+        background-image: url(img/unchecked.png);
+        background-size: cover;
+        background-position: center;
+        top: 12px;
+        left: 8px;
+      }
+
+      ul li.checked {
+        text-decoration: line-through;
+      }
+
+      ul li.checked::before {
+        background-image: url(img/checked.png);
+        height: 23px;
+        width: 23px;
+
+        /* border-radius: 50%; */
+        background-size: cover;
+        background-position: center;
+        top: 12px;
+        left: 8px;
+      }
+
+      ul li span {
+        position: absolute;
+        right: -46px;
+        top: 10px;
+        width: 40px;
+        height: 30px;
+        font-size: 8px;
+        color: black;
+        text-align: center;
+      }
+
+      ul li span:hover {
+        background-color: rgba(0, 0, 255, 0.5);
+      }
+
+      .myButtonClass {
+        margin-left: 20px;
+        padding: 8px 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- .container -> .todo-app -> h2.todolist, .row->input ,button -->
+    <div class="container">
+      <div class="todo-app">
+        <h2>
+          Todo List
+          <!-- <img src="book.png" alt="" /> -->
+        </h2>
+        <div class="row">
+          <input type="text" id="input-box" placeholder="Add your task" />
+          <button onclick="addTask()">Add</button>
+          <button onclick="deleteAllTask()" style="background-color: red">
+            Delete All
+          </button>
+        </div>
+
+        <ul id="list-container">
+          <!-- <li class="checked">task 1</li>
+          <li>task 2</li>
+          <li>task 3</li> -->
+        </ul>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
