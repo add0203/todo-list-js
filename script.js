@@ -18,6 +18,7 @@ function addTask() {
     listContainer.appendChild(ele);
     let button = document.createElement("button");
     button.setAttribute("class", "myButtonClass");
+    document.getElementByClassName("myButtonClass").style.backgroundColor = "red";
     button.innerText = "Delete";
     ele.appendChild(button);
   }
